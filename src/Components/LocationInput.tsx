@@ -43,6 +43,7 @@ export function LocationInput({setLat,setLong,fetchData}:LocationInputProps) {
   <div className="locationMain">
     <label className="">{location.split(',')[0]||'Enter Location'}</label>
     <div className="inputField">
+        <div>
         <input
             type="text"
             onChange={(e) => {
@@ -52,6 +53,10 @@ export function LocationInput({setLat,setLong,fetchData}:LocationInputProps) {
             placeholder={'Enter Location'}
             className=""
         />
+            
+        </div>
+        <div className="listDiv">
+
         <ul className="list">
             {sugg && locationSuggestions.map((suggestion) => (
                 <li key={suggestion?.id}>
@@ -71,6 +76,8 @@ export function LocationInput({setLat,setLong,fetchData}:LocationInputProps) {
                 </li>
             ))}
         </ul>
+        </div>
+
     </div>
     <div><button onClick={fetchData}>Search</button></div>
 </div>

@@ -2,7 +2,6 @@
 
 .locationMain{
     display: flex;
-    justify-content: center;
     margin-top: 5px;
     width: 700px;
     background-color: #01579b;
@@ -24,10 +23,20 @@
 
 .list{
     background-color: transparent;
+    overflow: hidden;
+    width: 250px;
+    max-width: 350px;
+    padding: 0;
 }
 
 .list li{
     margin-bottom: 2px;
     color: transparent;
+    background-color: transparent;
+    border: 0;
+}
+
+.listDiv{
+    justify-self: start;
 }
 
