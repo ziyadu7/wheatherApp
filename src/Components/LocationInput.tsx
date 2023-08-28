@@ -19,7 +19,7 @@ export function LocationInput({setLat,setLong,fetchData}:LocationInputProps) {
         const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json`;
         const params = {
             access_token: MAPBOX_API_KEY,
-            types: 'place', // Limit results to places only
+            types: 'place,locality,neighborhood', // Limit results to places only
             limit: 5, // Number of suggestions to retrieve
             country: "IN"
         };
@@ -41,7 +41,7 @@ export function LocationInput({setLat,setLong,fetchData}:LocationInputProps) {
     };
   return (
   <div className="locationMain">
-    <label className="">{location||'Enter Location'}</label>
+    <label className="">{location.split(',')[0]||'Enter Location'}</label>
     <div className="inputField">
         <input
             type="text"
